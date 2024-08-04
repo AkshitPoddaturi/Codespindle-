@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="reg_page.css">
+</head>
+
+<body>
+    <div class="container">
+        <a href="codespindle.html" class="home-link">Back to Home</a>
+        <h2>Registration</h2>
+        <div class="options">
+          <button class="option-btn" id="signUpBtn">Sign Up</button>
+          <button class="option-btn" id="signInBtn">Sign In</button>
+        </div>
+        <form id="signUpForm" class="form">
+          <input type="text" placeholder="Username" required>
+          <input type="password" placeholder="Password" required>
+          <input type="password" placeholder="Confirm Password" required>
+          <button type="submit" disabled>Sign Up</button>
+        </form>
+        <form id="signInForm" class="form" style="display: none;">
+          <input type="text" placeholder="Username" required>
+          <input type="password" placeholder="Password" required>
+          <button type="submit" disabled>Sign In</button>
+        </form>
+    </div>
+    
+    <script>
+        const signUpBtn = document.getElementById('signUpBtn');
+        const signInBtn = document.getElementById('signInBtn');
+        const signUpForm = document.getElementById('signUpForm');
+        const signInForm = document.getElementById('signInForm');
+    
+        signUpBtn.addEventListener('click', () => {
+          signUpForm.style.display = 'block';
+          signInForm.style.display = 'none';
+        });
+    
+        signInBtn.addEventListener('click', () => {
+          signUpForm.style.display = 'none';
+          signInForm.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
